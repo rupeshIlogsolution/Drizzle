@@ -631,7 +631,7 @@ export const UpdateBillingFreqapi = async (org, sno, billing_freq, billing_freq_
 }
 
 export const ActiveBillingFreq = async (org) => {
-    const url = `https://drizzlebackend.awlworldwide.com/api/ActiveBillingFreq`
+    const url = `http://localhost:2008/api/ActiveBillingFreq`
     return axios.post(url, { org }).then(response => response.data).catch(error => console.log(error));
 }
 

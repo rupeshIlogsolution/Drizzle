@@ -31,12 +31,14 @@
     height: 38%;
     width: 86%;
     border: px solid gray;
-    /* box-shadow: 3px 3px 10px silver; */
     transition: all 0.2s linear;
     border: 1px solid rgb(209, 209, 209);
 }
 
 .pending_recurring_container .pending_recurring-cards .pending-recurring-card:hover {
+    box-shadow: 3px 3px 10px rgb(82, 124, 169);
+}
+.pending_recurring_container .pending_recurring-cards .pending-recurring-activecard {
     box-shadow: 3px 3px 10px rgb(82, 124, 169);
 }
 

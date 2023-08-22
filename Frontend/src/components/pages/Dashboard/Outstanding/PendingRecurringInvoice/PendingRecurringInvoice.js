@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { CSVLink } from "react-csv";
 import 'react-data-table-component-extensions/dist/index.css';
-import { PendingRecurringInvoiceApi, Outstanding_Invoice_filter } from '../../../../../api'
+import { PendingRecurringInvoiceApi, Outstanding_Invoice_filter, ActiveBillingFreq } from '../../../../../api'
 import './PendingRecurringInvoice.css'
 import { BiExport } from 'react-icons/bi'
 import { SiMicrosoftexcel } from 'react-icons/si'
@@ -13,12 +13,16 @@ const PendingRecurringInvoice = () => {
   const [data, setData] = useState([])
   const [receiveRecurring, setReceiveRecurring] = useState([])
   const [filterType, setFilterType] = useState('Monthly')
+  const [billingFreqList, setBillingFreqList] = useState([])
 
   useEffect(() => {
     const fetchdata = async () => {
       const get_recurring = await PendingRecurringInvoiceApi(localStorage.getItem('Database'), 'Monthly')
       setPendingRecurring(get_recurring.result)
       setReceiveRecurring(get_recurring.pendingresult)
+      const bill_freq = await ActiveBillingFreq(localStorage.getItem('Database'))
+      setBillingFreqList(bill_freq)
+      console.log(bill_freq)
     }
     fetchdata()
   }, [])
@@ -107,9 +111,26 @@ const PendingRecurringInvoice = () => {
           <div className='pending-recurring-card mx-auto text-center rounded px-2 cursor-pointer pt-2'>
             <h6>Pending Recurring Invoice</h6>
           </div>
-          <div className='pending-recurring-card mx-auto text-center rounded px-2 cursor-pointer pt-2' onClick={() => filterInvoie('Monthly')}>
-            <h6>Monthly Recurring Invoice</h6>
+          {
+            billingFreqList.map((freqType, index) => 
+              <div key={index} className={`pending-recurring-card mx-auto text-center rounded px-2 cursor-pointer pt-2 ${ filterType === freqType.billing_freq && 'pending-recurring-activecard'}`} onClick={() => filterInvoie(freqType.billing_freq)}>
+                <h6>{freqType.billing_freq} Recurring Invoice</h6>
+                <div className='d-flex flex-row justify-content-between'>
+                  <div >
+                    <span style={{ fontSize: "13px" }}>Pending Invoice</span>
+                    <h5 className='text-primary'>{filterType === freqType.billing_freq  ? receiveRecurring.length : 0}</h5>
+                  </div>
+                  <div>
+                    <small style={{ fontSize: "13px" }}>Received Invoice</small>
+                    <h5 className='text-primary'>{filterType === freqType.billing_freq ? pendingRecurring.length : 0}</h5>
+                  </div>
+                </div>
+              </div>
+            )
 
+          }
+          {/* <div className='pending-recurring-card mx-auto text-center rounded px-2 cursor-pointer pt-2' onClick={() => filterInvoie('Monthly')}>
+            <h6>Monthly Recurring Invoice</h6>
             <div className='d-flex flex-row justify-content-between'>
               <div >
                 <span style={{ fontSize: "13px" }}>Pending Invoice</span>
@@ -120,8 +141,8 @@ const PendingRecurringInvoice = () => {
                 <h5 className='text-primary'>{filterType === 'Monthly' ? pendingRecurring.length : 0}</h5>
               </div>
             </div>
-          </div>
-          <div className='pending-recurring-card mx-auto text-center rounded px-2 cursor-pointer pt-2' onClick={() => filterInvoie('Quarterly')}>
+          </div> */}
+          {/* <div className='pending-recurring-card mx-auto text-center rounded px-2 cursor-pointer pt-2' onClick={() => filterInvoie('Quarterly')}>
             <h6>Quaterly Recurring Invoice</h6>
             <div className='d-flex flex-row justify-content-between'>
               <div >
@@ -133,8 +154,8 @@ const PendingRecurringInvoice = () => {
                 <h5 className='text-primary'>{filterType === 'Quarterly' ? pendingRecurring.length : 0}</h5>
               </div>
             </div>
-          </div>
-          <div className='pending-recurring-card mx-auto text-center rounded px-2 cursor-pointer pt-2' onClick={() => filterInvoie('6 Months')}>
+          </div> */}
+          {/* <div className='pending-recurring-card mx-auto text-center rounded px-2 cursor-pointer pt-2' onClick={() => filterInvoie('6 Months')}>
             <h6>6 Months Recurring Invoice</h6>
             <div className='d-flex flex-row justify-content-between'>
               <div >
@@ -146,8 +167,8 @@ const PendingRecurringInvoice = () => {
                 <h5 className='text-primary'>{filterType === '6 Months' ? pendingRecurring.length : 0}</h5>
               </div>
             </div>
-          </div>
-          <div className='pending-recurring-card mx-auto text-center rounded px-2 cursor-pointer pt-2' onClick={() => filterInvoie('Annually')}>
+          </div> */}
+          {/* <div className='pending-recurring-card mx-auto text-center rounded px-2 cursor-pointer pt-2' onClick={() => filterInvoie('Annually')}>
             <h6>Yearly Recurring Invoice</h6>
             <div className='d-flex flex-row justify-content-between'>
               <div >
@@ -159,7 +180,7 @@ const PendingRecurringInvoice = () => {
                 <h5 className='text-primary'>{filterType === 'Annually' ? pendingRecurring.length : 0}</h5>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
