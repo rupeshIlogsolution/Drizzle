@@ -1,0 +1,15 @@
+.vendor-Invoice-list{
+    padding:5px 0px 5px 10px;
+    margin-right: 20px;
+    list-style: none;
+    transition: all 0.2s linear;
+}
+.vendor-Invoice-list:not(:first-child){
+    border-top:1px solid gray ;
+}
+
+.vendor-Invoice-list:hover{
+    background: #eee;
+    padding-left: 10px;
+    transform: scale(1.05);
+}

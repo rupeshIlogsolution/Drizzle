@@ -1,0 +1,44 @@
+.contact_us_card {
+    width: 80%;
+    height: 300px;
+}
+
+.contact_us_logo {
+    font-size: 80px;
+    width: 25%;
+    background: #5f2149;
+}
+
+.contact_us_content {
+    width: 75%;
+}
+@media screen and (min-width: 850px) and (max-width:1250px) {
+    .contact_us_content {
+        padding: 30px;
+    }
+}
+
+
+@media screen and (max-device-width: 850px) {
+    .contact_us_card {
+        flex-direction: column;
+        width: 90%;
+        height: 100%;
+    }
+
+    .contact_us_logo {
+        width: 100%;
+        height: 120px;
+        font-size: 40px;
+    }
+
+    .contact_us_content {
+        width: 100%;
+        padding: 80px;
+    }
+
+    .contact_us_content span {
+        text-align: center;
+    }
+
+}

@@ -1,0 +1,27 @@
+.HelpDeskSideBar ul li{
+    list-style: none;
+    /* border: 1px solid red; */
+    margin-left: -30px;
+    cursor: pointer;
+    display: flex;
+    padding: 10px 12px;
+}
+.HelpDeskSideBar ul li:hover{
+    background: rgb(96,58,233);
+    color: white;
+}
+.HelpDeskSideBar{
+    display: flex;
+    background: #eee;
+    
+}
+
+.HelpDesk_container {
+    background: #fff;
+    background-size: 100% 100%;
+    min-height: 77vh;
+    max-width: 100%;
+    box-shadow: 2px 1px 10px gray, -3px -3px 10px gray;
+    border-radius: 10px 0px 0px 10px;
+    padding: 20px;
+}

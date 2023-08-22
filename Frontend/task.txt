@@ -1,0 +1,29 @@
+--------- App.js 239 line -------------
+TotalServicecompliance
+
+--------- App.js 219 line -------------
+Totalseries
+
+--------- App.js 230 line -------------
+TotalOperatingSystem
+
+--------- App.js 244  lines -----------
+TotalDeviceTask
+
+--------- App.js 227 lines ------------
+Showdevicegroup
+
+--------- App.js 222 lines ------------
+TotalDeviceType
+
+--------- App.js 236 lines ------------
+ShowDeviceservices
+
+---------- App.js 251 lines ------------
+TotalAgent
+
+---------- App.js  sidebar 2 ------------
+Roles & Assign Roles
+
+---------- App.js sidebar 2 -------------
+Theme

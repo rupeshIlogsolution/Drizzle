@@ -1,0 +1,232 @@
+.VendorDash {
+  width: 99%;
+  margin: 12px 8px;
+  /* min-height: 63vh; */
+  max-width: 100%;
+  justify-content: space-between;
+}
+
+.VendorDash .VendorDash1 {
+  width: 80%;
+  /* border: 2px solid red; */
+}
+
+.VendorDash .VendorDash2 {
+  width: 18%;
+  display: flex;
+  flex-direction: column;
+}
+
+.VendorDash .VendorDash2 .VendorDash2_card {
+  width: 100%;
+  height: 14vh;
+  margin: 25px 0;
+  padding: 10px;
+  box-shadow: 1px 1px 6px 1px silver;
+}
+
+.VendorDash2 .select_container{
+  display: flex;
+  flex-direction: column;
+}
+.VendorDash2 .select_container .select_div {
+  padding: 6% 10px;
+  height: 9vh;
+  margin: 15px 0;
+  border: 1px solid rgb(233, 233, 233);
+}
+
+.VendorDash .VendorDash1 .table1 {
+  padding: 0 3px;
+  overflow: auto;
+  height: 75.5%;
+}
+
+.tableheading {
+  top: -3%;
+  left: 2.5%;
+  background: linear-gradient(45deg, #5c99e8, #2e78d7);
+  width: 95%;
+  height: 60px;
+}
+
+.VendorDash .VendorDash1 .table1 .table th {
+  font-size: 13px;
+  color: #184c90
+}
+
+.VendorDash .VendorDash1 .table1 .table td {
+  font-size: 13px;
+  color: #404040
+}
+
+.table tr {
+  line-height: 25px
+}
+
+.Ref_icon {
+  background: linear-gradient(45deg, rgb(255, 107, 107), rgb(215, 62, 62));
+  font-size: 53px;
+  padding: 13px;
+  margin: -40px 20px 0 20px
+}
+
+.VendorDash2_card h1 {
+  margin-top: -16px;
+  font-weight: 600;
+  color: #312f68
+}
+
+.VendorDash2_card p {
+  margin: -2px -9px 0 0px;
+  color: #6a6a6a
+}
+
+
+/* ##################### Animated Button Start #################### */
+
+.nextVendor_AnimationBtn {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 10px 20px 0px 30px;
+  z-index: 0;
+}
+
+.nextVendor_AnimationBtn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  top: -5px;
+  background: #3356d1;
+  transform: skewX(30deg);
+  z-index: -1;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nextVendor_AnimationBtn:hover::before {
+  transform: skewX(0deg);
+  left: 50%;
+  top: 0;
+}
+
+.nextVendor_AnimationBtn::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 51%;
+  top: 5px;
+  background-color: #6664e9;
+  transform: skewX(30deg);
+  z-index: -1;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nextVendor_AnimationBtn:hover::after {
+  transform: skewX(0deg);
+  left: 0%;
+  top: 0;
+}
+
+/* ##################### Animated Button End #################### */
+@media screen and (max-width:1330px) {
+    .VendorDash { 
+     flex-direction: column-reverse; 
+     justify-content: flex-end;
+   } 
+  
+  .VendorDash .VendorDash2 {
+    width: 100%;
+    /* height: 90px; */
+  }
+  .VendorDash .VendorDash2 .nextVendor_AnimationBtn{
+      width: 50%;
+  }
+
+  .VendorDash .VendorDash2  .select_container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+.VendorDash2 .select_container .select_div {
+    padding: 0;
+    height: 50px;
+    width: 20%;
+    margin: 15px 3px;
+    border: none;
+  }
+
+  .VendorDash .VendorDash1 {
+    width: 99%;
+    margin-top: 40px;
+
+  }
+
+  .VendorDash .VendorDash2 .VendorDash2_card {
+    height: 77px;
+    margin: 0px 2px 0;
+    box-shadow: none;
+    width: 23%;
+    border: 1px solid rgb(226, 225, 225);
+  }
+
+  .Ref_icon {
+    font-size: 40px;
+    padding: 10px;
+    margin: -19px 20px 0 20px
+  }
+
+  .VendorDash2_card h1 {
+    margin-top: -25px;
+    font-weight: 600;
+    color: #312f68
+  }
+
+  .VendorDash2_card p {
+    font-size: 14px;
+  }
+} 
+@media screen and (max-width:940px) {
+
+  .Ref_icon {
+    font-size: 30px;
+    padding: 2px;
+  }
+
+  .VendorDash2_card p {
+    font-size: 12px;
+  } 
+}
+
+@media screen and (max-width:768px) {
+  .VendorDash .VendorDash2  .select_container {
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+  }
+  .VendorDash .VendorDash2 .select_container .select_div {
+    height: 60px;
+    width: 98%;
+  }
+
+  .VendorDash .VendorDash2 .select_container .VendorDash2_card {
+    height: 77px;
+    width: 98%;
+  }
+
+}
+@media screen and (max-width:450px) {
+  .VendorDash .VendorDash2 .nextVendor_AnimationBtn{
+    width: 80%;
+}
+  .VendorDash .VendorDash2  .select_container {
+   grid-template-columns: repeat(1,1fr);
+  }
+   .VendorDash .VendorDash2 .select_container .select_div {
+    height: 70px;
+  }
+
+
+}

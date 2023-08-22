@@ -1,0 +1,124 @@
+import React, { useState, useEffect } from 'react';
+import DataTable from 'react-data-table-component';
+import DataTableExtensions from 'react-data-table-component-extensions';
+import 'react-data-table-component-extensions/dist/index.css';
+import { TotalVendorCodeapi, DeleteVendorCode } from '../../../../api'
+import Sidebar from '../../../Sidebar/Sidebar';
+import { AiFillEdit } from 'react-icons/ai';
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
+import LoadingPage from '../../../LoadingPage/LoadingPage';
+import customStyles from '../../../TableCustomtyle'
+
+
+function TotalVendorCode() {
+    const [data, setData] = useState([])
+    const [loading, setLoading] = useState(false)
+
+    const columns = [
+        {
+            name: 'Vendor Code',
+            selector: 'vendor_code',
+            sortable: true,
+            cell: (row) => [
+                <a title='Click to Edit Vendor Master' href="/EditVendorCode"
+                    onClick={() => localStorage.setItem('VendorCodeSno', `${row.sno}`)} >
+                    {row.vendor_code}
+                </a>
+            ]
+        },
+        {
+            name: 'Vendor Name',
+            selector: 'vendor_name',
+            sortable: true,
+        },
+        {
+            name: 'Company City',
+            selector: 'company_city',
+            sortable: true,
+        },
+        {
+            name: 'Company Gst',
+            selector: 'company_gst',
+            sortable: true,
+        },
+        {
+            name: 'Vendor Portal',
+            selector: 'venodr_portal',
+            sortable: true,
+        },
+        {
+            name: 'Status',
+            sortable: true,
+            cell: (row) => [
+                <select className='border-0' style={{ background: "rgb(222, 222, 222)" }} onChange={async (e) => {
+                    const status = e.target.value;
+                    const org = localStorage.getItem('Database')
+
+                    await DeleteVendorCode(org, status, row.sno)
+                    window.location.reload()
+                }}>
+                    <option hidden value={row.status}>{row.status}</option>
+                    <option value='Active'>Active</option>
+                    <option value='Deactive'>Deactive</option>
+                </select>
+            ],
+        },
+        // {
+        //     name: "Actions",
+        //     sortable: false,
+        //     selector:'null',
+        //     cell: (row) => [
+        //         <a title='Edit Vendor Code' href="/EditVendorCode">
+        //             <p onClick={() => localStorage.setItem('VendorCodeSno', `${row.sno}`)} >
+        //                 <AiFillEdit className='ft-20' style={{marginBottom: "-13px" }} />
+        //             </p></a>
+        //     ]
+        // }
+
+    ];
+
+    useEffect(() => {
+        const fetchdata = async () => {
+            const org = localStorage.getItem('Database')
+            const tabledata = await TotalVendorCodeapi(org);
+            setData(tabledata)
+            setLoading(true)
+        }
+        fetchdata();
+    }, [])
+
+    const tableData = {
+        columns,
+        data
+    };
+
+    return (
+        <>
+            {
+                loading ?
+                    <Sidebar>
+                        <div className='main_container' >
+                            <div className='main-inner-container  d-flex justify-content-between pt-4 pb-3'>
+                                <h4><span className='page-type-head1'>Vendor Master <MdOutlineKeyboardArrowRight /></span> <span className='page-type-head2'>Total Vendor Master</span> </h4>
+                                <button className='btn btn-sm btn-voilet ' onClick={e => { e.preventDefault(); window.location.href = './AddVendorCode' }} >Add Vendor Master +</button>
+                            </div>
+                            <div className=' bg-white pb-1 pt-2 px-2 shadow1-silver rounded15'>
+                                <DataTableExtensions {...tableData}  >
+                                    <DataTable
+                                        noHeader
+                                        defaultSortField="id"
+                                        defaultSortAsc={false}
+                                        pagination
+                                        highlightOnHover
+                                        customStyles={customStyles}
+                                    />
+                                </DataTableExtensions>
+                            </div>
+                        </div>
+                    </Sidebar>
+                    : <LoadingPage />
+            }
+        </>
+    )
+}
+export default TotalVendorCode;

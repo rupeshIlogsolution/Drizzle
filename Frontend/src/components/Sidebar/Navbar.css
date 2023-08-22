@@ -1,0 +1,176 @@
+.menu {
+  position: absolute;
+  top: 57px;
+  right: 2%;
+  width: 100px;
+  padding: 10px 6px 5px 6px;
+  border-radius: 5px;
+  transition: 0.5s;
+  z-index: 30;
+  list-style: none;
+  box-shadow: 1px 1px 3px 1px rgb(138, 132, 132);
+  background: white;
+  text-align: center;
+  border: 2px;
+}
+
+/* .show > .dropdown-menu {
+    max-height: 900px;
+    visibility: visible;
+  }
+  
+  .dropdown-menu {
+    display: block;
+    max-height: 0;
+    visibility: hidden;
+    transition: all 0.8s ease-in-out;
+    overflow: hidden;
+    
+  } */
+.dropdown-item {
+  color: rgb(61, 61, 61);
+  font-size: 14px;
+  transition: transform .2s;
+  padding: 5px 15px;
+}
+
+.dropdown-item:hover {
+  background: #ccc2ee;
+  border-radius: 4px;
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  color: rgb(24, 2, 63);
+}
+
+.dropdown-item:active {
+  background: #603ae9;
+  color: white;
+  border-radius: 4px;
+}
+.nav_with_alert{
+  position: sticky;
+  top: 2.1%;
+  z-index: 1;
+}
+/* ======================================================================================================== */
+.innernavbarcontainer {
+  height: 60px;
+  width: 100%;
+  padding: 5px 0px 5px 15px;
+  box-shadow: 2px 2px 5px silver;
+  border-radius: 10px 5px 5px 10px;
+  /* font-family: 'Roboto' */
+} 
+
+.logo-img {
+  height: 80%;
+}
+
+.setting-main-div {
+  margin-left: 50px;
+}
+
+.navcontainer-second {
+  height: 80%;
+  width: 40%;
+  right: 2%;
+}
+
+.navcontainer-innersecond {
+  display: flex;
+}
+
+
+@media screen and (max-width:1350px) {
+  .navcontainer-second {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .name-text {
+    display: none;
+  }
+}
+
+@media screen and (max-width:900px) {
+  .navcontainer-second {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width:800px) {
+  .navcontainer-second {
+    width: 8%;
+
+  }
+
+  .navcontainer-innersecond {
+    display: none;
+    border: 2px solid red;
+
+  }
+
+  .reports {
+    display: none;
+    border: 2px solid red;
+  }
+}
+
+
+@media screen and (max-width:600px) {
+  .setting-main-div {
+    margin-left: 5px;
+  }
+
+  .logo-img {
+    height: 60%;
+  }
+}
+
+
+.tooltiptext {
+  display: none;
+  min-width: 60px;
+  background-color: rgba(0, 0, 0, 0.66);
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 38px;
+}
+
+.profileicon:hover .tooltiptext {
+  display: block;
+}
+
+.settings:hover .tooltiptext {
+  display: block;
+}
+
+.notifications:hover .tooltiptext {
+  display: block;
+}
+
+.help:hover .tooltiptext {
+  display: block;
+}
+
+.clock:hover .tooltiptext {
+  display: block;
+}
+
+/* .reports:hover .tooltiptext {
+    display: block;
+  } */
+
+.innernavbarcontainer .dropdown-menu {
+  border-radius: 3px;
+  border: none;
+  background: rgb(255, 255, 255);
+  padding: 10px;
+}

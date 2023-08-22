@@ -1,0 +1,243 @@
+.sidebarcontainer {
+    background: rgb(240, 242, 245);
+    /* background: silver; */
+    min-height: 100vh;
+    max-width: 100vw;
+    padding: 10px;
+    /* border: 2px solid green; */
+    font-family: 'Roboto';
+    box-sizing: border-box;
+}
+.sidebar{
+    background: #fff;
+    min-height: 95%;
+    max-height: 95%;
+    position: fixed;
+    transition: all 0.5s;
+    color: #000;
+    padding: 10px 0px 0px 0px;
+}
+
+.sidebarclose {
+    width: 50px;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 6px silver;
+    border-radius: 5px;
+    z-index: 10000;
+    /* border: 2px solid rgb(0, 38, 255); */
+}
+
+
+.sidebaropen {
+    width: 244px;
+    box-shadow: 1px 1px 3px rgb(138, 132, 132);
+    border-radius: 10px 10px 10px 10px;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+.internalsidebar {
+    overflow: auto;
+    height: 90vh;
+    position: relative;
+}
+
+.sidebarcontainer .ul {
+    padding: 0%;
+}
+
+.sidebarcontainer .ul .li {
+    list-style: none;
+}
+
+.innerdiv .ul {
+    padding: 0%;
+}
+
+.innerdiv .ul .li {
+    list-style: none;
+}
+
+.sidebarinerabc {
+    overflow: auto;
+    min-height: 60vh;
+    max-height: 77vh;
+}
+
+.inner-sidebarfooter {
+    z-index: 100;
+    display: none
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(rgb(193, 193, 193), rgb(170, 169, 169));
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+
+
+.main {
+    width: 100%;
+    max-width: 96.5%;
+    height: 100%;
+    margin-left: 54px;
+    padding: 0px 0px 5px 10px;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.mainopen {
+    width: 95%;
+    height: 100%;
+    margin-left: 245px;
+    padding: 0px 0px 0px 10px;
+    transition: all 0.5s;
+}
+@media screen and (max-width:350px){
+    .main,.mainopen{
+        padding: 5px 0px 0px 2px;
+    }
+    
+}
+
+.top_section {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+
+}
+
+.bars {
+    display: flex;
+    font-size: 1.2rem;
+    transition: all 0.5s;
+}
+
+.link {
+    display: flex;
+    color: #000;
+    padding: 10px 15px;
+    gap: 15px;
+    height: 45px;
+    overflow: hidden;
+    transition: all 0.5s;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px silver;
+}
+
+.innerlink {
+    list-style: none;
+    border-radius: 10px;
+}
+
+.navlink {
+    text-decoration: none;
+    padding: 6px 10px;
+    color: rgb(66, 4, 69);
+}
+
+.navlink:hover {
+    background: #c6b6f3;
+    color: rgb(66, 4, 69);
+    border-radius: 10px;
+}
+
+
+.link:hover {
+    background: #c6b6f3;
+    color: #603AE9;
+    transition: all 0.7s;
+}
+
+.active {
+    background: #603AE9;
+    color: #fff;
+    border-radius: 10px;
+
+}
+
+.inneruldiv {
+    overflow: hidden;
+    display: none;
+    width: 100%;
+    transition: all 1.7s;
+}
+
+.icon,
+.link_text {
+    font-size: 1.0rem;
+}
+
+.footer_section {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.footer_section .footer_icon {
+    font-size: 1.3rem;
+    color: #603AE9;
+}
+
+
+@media screen and (max-width:800px) {
+    .sidebarcontainer {
+        padding: 0px;
+    }
+    .main{
+        max-width: 90%;
+    }
+
+    .mainopen {
+        margin-left: 50px;
+    }
+
+    .sidebar,.sidebaropen {
+        z-index: 100;
+        top: 50%;
+        transform: translateY(-50%);
+
+    }
+
+    .sidebarinerabc {
+        max-height: 64.2vh;
+    }
+    .logo {
+        font-size: 25px;
+    }
+    .inner-sidebarfooter {
+        display: block;
+    }
+}
+@media screen and (min-width:300px) and (max-width:450px) {
+    .main {
+        max-width: 87%;
+    }
+}
+
+@media screen and (min-width:0px) and (max-width:300px) {
+    .sidebar {
+        width: 30px;
+    }
+
+    .sidebaropen {
+        width: 100%;
+    }
+
+    .top_section {
+        padding: 20px 5px;
+    }
+
+    .link {
+        padding: 10px 8px;
+    }
+
+}

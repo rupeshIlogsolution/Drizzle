@@ -1,0 +1,19 @@
+.graph-div {
+    min-height: 30vh;
+    max-height: 45vh;
+    width: 70%;
+    overflow: auto;
+    transition:height 1.5s linear ;
+}
+.graph-div #acquisitions{
+  height: 100%;
+  margin: auto;
+}
+
+@media screen and (max-width:1050px){
+  .graph-div {
+    min-height: 35vh;
+    max-height: 50vh;
+    width: 90%;
+}
+}

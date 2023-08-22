@@ -1,0 +1,71 @@
+.pending_recurring_container {
+    height: 100%;
+    width: 100%;
+}
+
+.pending_recurring_container .pending_recurring-table-div {
+    min-height: 75vh;
+    max-height: 65vh;
+    width: 73%;
+}
+
+.pending_recurring_container .pending_recurring-table-div .pending_recurring_title {
+    background: linear-gradient(45deg, rgb(68, 97, 240), rgb(37, 63, 196));
+    width: 90%;
+    margin-top: -20px;
+    height: 50px;
+}
+
+.pending_recurring_container .pending_recurring-table-div .pending_recurring_table {
+    height: 85%;
+}
+
+.pending_recurring_container .pending_recurring-cards {
+    width: 24%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.pending_recurring_container .pending_recurring-cards .pending-recurring-card {
+    height: 38%;
+    width: 86%;
+    border: px solid gray;
+    /* box-shadow: 3px 3px 10px silver; */
+    transition: all 0.2s linear;
+    border: 1px solid rgb(209, 209, 209);
+}
+
+.pending_recurring_container .pending_recurring-cards .pending-recurring-card:hover {
+    box-shadow: 3px 3px 10px rgb(82, 124, 169);
+}
+
+@media screen and (max-width:768px) {
+    .pending_recurring_container {
+        flex-direction: column;
+    }
+
+    .pending_recurring_container .pending_recurring-table-div {
+        min-height: 42vh;
+        max-height: 45vh;
+        width: 100%;
+    }
+
+    .pending_recurring_container .pending_recurring-table-div .pending_recurring_table {
+        min-height: 40vh;
+        max-height: 42vh;
+    }
+
+    .pending_recurring_container .pending_recurring-cards {
+        margin-top: 30px;
+        width: 100%;
+        height: 25vh;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .pending_recurring_container .pending_recurring-cards .pending-recurring-card {
+        height:10vh;
+        /* width: 57%; */
+    }
+ 
+}

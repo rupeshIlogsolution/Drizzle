@@ -1,0 +1,91 @@
+.Recurring_div{
+    width: 99%;
+    min-height: 63vh;
+    /* border: 1px solid red; */
+    display: flex;
+    margin-top: 15px;
+}
+.Recurring_div .recurring_table{
+   width: 78%;
+   box-shadow: 1px 1px 10px silver;
+   /* border: 1px solid green; */
+}
+.Recurring_div .recurring_table .recurring_table_inside{
+    overflow: auto;
+    height: 59vh;
+    width: 100%;
+    margin-top: 45px;
+    /* border: 1px solid blue; */
+}
+
+
+.Recurring_div .recurring_table .recurring_table_inside tr{
+    line-height: 18px;
+}
+.Recurring_div .recurring_cards{
+    background:linear-gradient(45deg, #5c99e8,#2e78d7);
+    width: 17%;
+    /* border: 1px solid red; */
+}
+.Recurring_div .recurring_cards .recurring_card{
+    /* background: linear-gradient(45deg, rgb(96, 58, 233), rgb(50, 15, 176)); */
+    height: 11.9vh;
+}
+.recurringhead{
+    top:-3%;
+    left:2.5%;
+    background:linear-gradient(45deg, #5c99e8,#2e78d7);
+    width:95%;
+    height:60px;
+    border-radius: 5px;
+
+}
+.for_pnation{
+    display: flex;
+}
+@media only screen and (max-width: 1000px) {
+    .Recurring_div{
+        /* display: block; */
+        flex-direction: column-reverse;
+        /* border: 1px solid black; */
+        margin-top: -7px;
+    }
+    .Recurring_div .recurring_table{
+        width: 99%;
+        /* border: 1px solid white; */
+        /* border: 1px solid black; */
+        margin-top: 7px;
+     }
+     .Recurring_div .recurring_cards{
+        width: 99%;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+        
+    }
+}
+@media only screen and (max-width: 500px) {
+     .Recurring_div .recurring_cards{
+        width: 99%;
+        display: block;
+    }
+}
+@media only screen and (max-width: 660px) {
+    .for_pnation{
+        display: block;
+        text-align: center;
+    }
+    .react_pagination{
+        display: flex;
+        justify-content: center;
+    }
+    .Recurring_div .recurring_cards .recurring_card{
+        height: 7vh;
+    }
+    .Recurring_div .recurring_cards .recurring_card p{
+        font-size: 13px;
+    }
+    .Recurring_div .recurring_cards .recurring_card h3{
+        font-size: 20px;
+    }
+}

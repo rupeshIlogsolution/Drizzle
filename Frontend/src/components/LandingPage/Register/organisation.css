@@ -1,0 +1,87 @@
+ .profile {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 2px 2px 6px gray;
+ }
+
+ .profile .photo_sec {
+    width: 20%;
+    text-align: center;
+    flex-direction: column;
+    background: rgb(95, 33, 73);
+ }
+
+ .profile .details {
+    width: 80%;
+ }
+
+ .auth-div .auth-inner-div {
+    margin-left: 50px;
+ }
+
+ @media screen and (max-device-width: 1250px) {
+    .photo_sec .photo_sec-title {
+       font-size: 23px;
+    }
+ }
+
+ @media screen and (min-device-width: 900px) {
+    .profile_log {
+       font-size: 140px;
+       top: 50%;
+       left: 50%;
+       -ms-transform: translate(-50%, -50%);
+       transform: translate(-50%, -50%);
+    }
+ }
+
+ @media screen and (max-device-width: 900px) {
+    .profile {
+       flex-direction: column;
+    }
+
+    .profile .photo_sec {
+       height: 90px;
+       width: 100%;
+       flex-direction: row;
+       align-items: center;
+       padding: 0px 20%;
+    }
+
+    .profile_log {
+       top: 0%;
+       left: 83%;
+       font-size: 60px;
+    }
+
+    .profile .details {
+       width: 100%;
+       padding: 30px 30px;
+
+    }
+
+    .profile_log {
+       font-size: 100px;
+    }
+
+    .auth-div .auth-inner-div {
+       margin-left: 0px;
+    }
+ }
+
+ @media screen and (max-device-width: 672px) {
+    .profile_log {
+       font-size: 80px;
+    }
+
+    .profile .photo_sec {
+       padding: 0px 10%;
+    }
+ }
+
+ @media screen and (max-width: 512px) {
+   .profile .photo_sec {
+      padding: 0px 5%;
+   }
+ }

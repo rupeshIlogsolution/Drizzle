@@ -1,0 +1,148 @@
+.summary-dash {
+    margin-top: 50px;
+    justify-content: space-around;
+}
+
+.summary_icon {
+    background: linear-gradient(45deg, rgb(255, 107, 107), rgb(215, 62, 62));
+    border-radius: 5px;
+    margin-top: -30px;
+    height: 50px;
+    padding: 10px 11px;
+}
+
+.summary-dash .pie_chart_div {
+    width: 28%;
+    height: 330px;
+}
+
+.summary-dash .pie_chart_div .pie_chart {
+    width: 93%;
+    height: 280px;
+    top: -10%;
+    left: 3.5%;
+    background: #cfcdce;
+}
+
+.Summary_cards_div {
+    width: 69%;
+    padding: 0 15px;
+}
+
+.Summary_cards {
+    margin-top: 30px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.Summary_cards_issuetype {
+    margin-top: 30px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.Summary_card {
+    height: 90px;
+    width: 190px;
+    margin: auto;
+}
+
+.Summary_card_issuetype {
+    height: 210px;
+    width: 270px;
+    margin: 12px auto;
+}
+
+.summary-dash .Summary_cards_div h6 {
+    color: rgb(81, 79, 79);
+}
+
+@media screen and (max-width:1200px) {
+    .summary-dash {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .summary-dash .pie_chart_div {
+        width: 48%;
+        height: 350px;
+    }
+
+    .summary-dash .pie_chart_div .pie_chart {
+        height: 320px;
+    }
+
+    .Summary_cards_div {
+        width: 98%;
+    }
+    .Summary_cards_issuetype {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+}
+
+@media screen and (max-width:900px) {
+    .summary-dash .pie_chart_div {
+        width: 58%;
+    }
+
+    .Summary_cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 2fr;
+        grid-row-gap: 35px;
+    }
+    .Summary_cards_issuetype {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+    }
+}
+@media screen and (max-width:600px) {
+    .Summary_cards_issuetype {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 1fr;
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    .summary-dash .pie_chart_div {
+        width: 68%;
+    }
+
+    .Summary_card {
+        padding-top: 27px;
+    }
+}
+
+@media screen and (max-width:530px) {
+    .summary-dash .pie_chart_div {
+        width: 95%;
+    }
+
+    .Summary_cards {
+        margin-top: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 4fr;
+        grid-row-gap: 35px;
+    }
+
+    .Summary_card {
+        width: 230px;
+    }
+
+    .summary_icon {
+        padding: 7px 8px;
+    }
+
+}

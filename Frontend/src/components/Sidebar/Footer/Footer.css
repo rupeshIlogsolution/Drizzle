@@ -1,0 +1,20 @@
+.footer {
+  border-top: 1px solid rgb(181, 176, 176);
+}
+
+.social_media_links {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media screen and (max-width:600px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .social_media_links {
+    justify-content: center;
+  }
+  
+}

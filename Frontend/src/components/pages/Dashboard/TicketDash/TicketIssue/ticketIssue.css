@@ -1,0 +1,84 @@
+ .ticketissue-container {
+     width: 90%;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-template-rows: 3fr;
+     grid-column-gap: 24px;
+     grid-row-gap: 20px;
+ }
+
+ .ticket-issue-card {
+     width: 350px;
+     box-shadow: 1px 1px 2px 1px silver;
+ }
+
+ .ticket-issue-card-icon {
+     font-size: 55px;
+     padding: 8px;
+     margin: -15px 14px 0;
+     background: linear-gradient(45deg, rgb(68, 97, 240), rgb(37, 63, 196));
+ }
+ 
+
+ @media screen and (max-width:1300px) {
+     .ticketissue-container {
+         grid-template-columns: repeat(2, 1fr);
+         grid-template-rows: 4fr;
+     }
+
+     .ticket-issue-card {
+         width: 320px;
+     }
+ }
+
+ @media screen and (max-width:900px) {
+     .ticketissue-container {
+         grid-template-columns: repeat(2, 1fr);
+         grid-template-rows: 4fr;
+     }
+
+     .ticket-issue-card {
+         width: 320px;
+     }
+
+     .ticket-issue-card-icon {
+         font-size: 45px;
+         padding: 6px;
+     }
+ }
+
+ @media screen and (max-width:750px) {
+
+     .ticket-issue-card {
+         width: 280px;
+     }
+     .ticket-issue-card-icon {
+        font-size: 40px;
+        padding: 4.5px;
+    }
+ }
+
+ @media screen and (max-width:680px) {
+     .ticketissue-container {
+         grid-template-columns: repeat(1, 1fr);
+     }
+
+     .ticket-issue-card {
+         width: 320px;
+         margin: auto;
+     }
+     .ticket-issue-card-icon {
+        padding: 3.5px;
+    }
+ }
+
+ @media screen and (max-width:350px) {
+     .ticket-issue-card {
+         width: 80%;
+     }
+     .ticket-issue-card-icon {
+        font-size: 32px;
+        padding: 3px;
+    }
+   
+ }

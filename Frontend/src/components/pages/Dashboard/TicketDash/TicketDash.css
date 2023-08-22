@@ -1,0 +1,168 @@
+.ticket_dash {
+    width: 99%;
+    margin: 10px 8px;
+    min-height: 63vh;
+    max-width: 100%;
+    padding-top: 3px;
+    padding-left: 10px;
+    background: #f0f2f5;
+    /* z-index: 0; */
+}
+
+.ticket_dash .ticket_dash_inner {
+    width: 30%;
+    height: 6vh;
+}
+
+.ticket_details {
+    background: rgba(96, 58, 233, 0.4);
+    width: 100%;
+    z-index: 0;
+}
+
+/* .ticket_details:hover {
+    background: #fff;
+    border-bottom: none;
+} */
+
+/* ########### Departmants #### */
+
+.half-a-border-on-top {
+    margin-top: -1.5px;
+    position: relative;
+    min-height: 60vh;
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .ticket_dash .ticket_dash_inner {
+        width: 65%;
+    }
+}
+
+
+
+
+
+
+
+/* ############  Ticket Priority ################# */
+
+.ticket_priority {
+    /* border: 2px solid red; */
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    /* grid-column-gap: 24px; */
+    margin: auto;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.ticket-priority-card {
+    /* min-height: 18vh; */
+    /* margin: 6px 10px 15px 10px; */
+    width: 350px;
+    box-shadow: 1px 1px 2px 1px silver;
+    /* background: white; */
+    margin: auto;
+}
+
+.inner1-ticket-priority {
+    height: 40px;
+}
+
+@media screen and (max-width: 1300px) {
+    .ticket_dash .ticket_dash_inner {
+        width: 50%;
+    }
+
+    .ticket_priority {
+        width: 100%;
+    }
+
+    .ticket-priority-card {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .ticket-priority-card {
+        width: 350px;
+    }
+
+    .ticket_priority {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 2fr;
+        grid-row-gap: 24px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .ticket-priority-card {
+        width: 300px;
+    }
+
+}
+
+@media screen and (max-width: 751px) {
+    .ticket_dash .ticket_dash_inner {
+        width: 95%;
+    }
+
+    .ticket_card_div {
+        display: block;
+    }
+
+    .ticket_dash .ticket_card {
+        width: 93%;
+        height: 17vh;
+    }
+    .ticket_dash {
+        padding: 0px;
+
+    }
+
+    .ticket_priority {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 3fr;
+        grid-row-gap: 24px;
+    }
+
+    .ticket-priority-card {
+        width: 330px;
+    }
+}
+
+
+
+/*  ####################### My Tickets Page ############## */
+
+.my-tickets-container {
+    height: 320px;
+    width: 400px;
+}
+@media screen and (max-width: 500px) {
+    .my-tickets-container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .ticket_dash .ticket_card {
+        width: 87%;
+        height: 17vh;
+
+    }
+
+    .ticket-priority-card {
+        width: 90%;
+    }
+    .my-tickets-container {
+        width: 100%;
+    }
+    
+}

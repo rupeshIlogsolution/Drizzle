@@ -1,0 +1,88 @@
+.Resister-wrapper{
+    min-height: 70vh;
+   
+}
+
+.reg_main_div{
+    /* display: flex; */
+    box-shadow: 1px 1px 9px 1px #c0c0c0;
+    /* border-radius: 5px; */
+  }
+  .for_reg{
+      /* width:100%; */
+      padding: 10px;
+  }
+  .for_icon{
+      width:30%;
+      border-left: 0.01em solid silver;
+      display: none;
+      color: rgb(21, 12, 51);
+      background:  #d6d5f0f7;
+  }
+
+  .pagechange{
+      margin: 30px 46% 0;
+      background: rgb(21, 12, 51);
+      width: 31px;
+      padding: 6px 0;
+      /* border-radius: 50%; */
+  }
+  #organisation{
+      font-size: 80px;
+      margin:70px 37.5% 10px;
+  }
+  #icon_for_sm{
+      display: none;
+      color:  rgb(21, 12, 51);
+  }
+  
+  @media screen and (min-device-width: 1020px) and (max-device-width: 2500px) { 
+      
+      .for_icon{
+          display: block;
+      }
+      .for_reg{
+          width:70%;
+      }
+      .for_reg{
+          padding: 40px;
+      }
+  
+  }
+  @media screen and (min-device-width: 340px) and (max-device-width: 1020px) { 
+      
+      .for_reg{
+          padding: 30px;
+      }
+      /* .for_reg label{
+          color: rgb(21, 12, 51);
+      }
+      .for_reg h5{
+          color: rgb(21, 12, 51);
+      }
+   */
+  }
+  @media screen and (min-device-width: 440px) and (max-device-width: 1020px) { 
+      
+         #icon_for_sm{
+          font-size: 31px;
+          margin: 0 5px 6px  ;
+          display: block;
+      }
+  
+  }
+  @media screen and (min-device-width: 0) and (max-device-width: 440px) { 
+      
+      #icon_for_sm{
+       font-size: 25px;
+       margin: 2px 5px 0 5px ;
+       display: block;
+   }
+   /* .for_reg label{
+      color: rgb(21, 12, 51);
+  }
+  .for_reg h5{
+      color: rgb(21, 12, 51);
+  } */
+  
+  }

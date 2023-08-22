@@ -1,0 +1,43 @@
+.sidebarcontainer2 {
+    width: 320px;
+    height: 85%;
+    box-shadow: 2px 2px 10px solid #333;
+    z-index: 10;
+    position: fixed;
+    right: 1%;
+    margin-top: 90px;
+    background: #fff;
+    box-shadow: -2px 2px 10px gray;
+    border-radius: 15px;
+    transition: all 0.5s linear;
+}
+
+.sidebar2close {
+    top: 100%;
+}
+
+.sidebar2open {
+    top: 0%;
+}
+
+.sidebarcontainer2 .sidebar-head {
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgb(178, 0, 254);
+}
+
+.sidebarcontainer2 .sidebar-head::first-letter {
+    font-size: 25px;
+    color: rgb(150, 54, 241);
+}
+
+.sidebarcontainer2 .sidebar2-navdiv {
+    border-radius: 10px;
+    height: 50px;
+    box-shadow: 1px 1px 3px silver;
+}
+
+
+.sidebarcontainer2 .sidebar2-themesec .sidebar2-themediv .color-div .color-span {
+    height: 20px;
+    width: 20px;
+}
