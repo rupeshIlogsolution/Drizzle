@@ -66,7 +66,7 @@ function AddVendorPayment() {
             val.pop();
             setCount(val.length);
             setArry(val);
-        }else{
+        } else {
             let objval = [...arryval];
             objval.pop();
             setArryval(objval)
@@ -104,21 +104,23 @@ function AddVendorPayment() {
 
     const handleAddVendorIvoice = async (e) => {
         e.preventDefault();
-        for(let i=0;i<arryval.length;i++){
-            var message = {
-                invoice_number:maildata[i].invoce_no,
-                invoice_date : maildata[i].invoice_date,
-                invoice_receive_date : maildata[i].invoice_date,
-                invoice_amount:maildata[i].invoice_amount,
-                invoice_upload:maildata[i].filedata || "",
-                payment_date:arryval[i].Paymentdate,
-                payment_details:arryval[i].paymentDetail,
-                payment_amount:arryval[i].PaymentAmt,
-                payment_link:arryval[i].filedata || "",
-                mailid:maildata[i].company_mailId,
-                vendor_name:maildata[i].vendor_name,
-                referance_no:maildata[i].referance_no
+        let sendMessage = [];
+        for (let i = 0; i < arryval.length; i++) {
+            var messageObj = {
+                invoice_number: maildata[i].invoce_no,
+                invoice_date: maildata[i].invoice_date,
+                invoice_receive_date: maildata[i].invoice_date,
+                invoice_amount: maildata[i].invoice_amount,
+                invoice_upload: maildata[i].filedata || "",
+                payment_date: arryval[i].Paymentdate,
+                payment_details: arryval[i].paymentDetail,
+                payment_amount: arryval[i].PaymentAmt,
+                payment_link: arryval[i].filedata || "",
+                mailid: maildata[i].company_mailId,
+                vendor_name: maildata[i].vendor_name,
+                referance_no: maildata[i].referance_no
             }
+            sendMessage.push(messageObj)
         }
         setLoading(false)
         document.getElementById('subnitbtn').disabled = 'true'
@@ -152,7 +154,11 @@ function AddVendorPayment() {
         }
         if (errorcount === 0) {
             const result = await UpdateVendorInvoice(org, arryval, localStorage.getItem('UserId'))
-            let mail = await VendorPaymentEmail(message)
+
+            sendMessage.map(async (data, index) => {
+                let mail = await VendorPaymentEmail(data)
+            })
+
 
             setLoading(true)
             if (result === 'Data Updated') {
@@ -174,7 +180,7 @@ function AddVendorPayment() {
         document.getElementById(`button${e.Index}`).innerHTML = e.invoice_no;
 
         const vendordetails = await GetVendorDetails(localStorage.getItem('Database'), e.vendor_name);
-        maildata[e.Index] = { invoce_no: e.invoice_no, invoice_date: e.invoice_date, receiving_date: e.invoice_date, invoice_url: e.invoice_url, vendor_name: vendordetails[0].vendor_name,company_mailId:vendordetails[0].company_email,invoice_amount:e.InvoiceAmt,referance_no:e.refno }
+        maildata[e.Index] = { invoce_no: e.invoice_no, invoice_date: e.invoice_date, receiving_date: e.invoice_date, invoice_url: e.invoice_url, vendor_name: vendordetails[0].vendor_name, company_mailId: vendordetails[0].company_email, invoice_amount: e.InvoiceAmt, referance_no: e.refno }
 
     }
 
@@ -322,32 +328,32 @@ function AddVendorPayment() {
                                             </div>
                                         </div>
                                         <div className="modal-body overflow-auto" style={{ maxHeight: '60vh' }}>
-                                        <table className="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Account Number</th>
-                                    <th>Invoice Number</th> 
-                                    <th>Referance Number</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {
-                                pendinginvoicelist.map((item, index) => (
-                                        <tr key={index}className="vendor-Invoice-list cursor-pointer" data-dismiss="modal" value={`${item.sno},${item.invoice_no}`}  onClick={(e) => {
+                                            <table className="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Account Number</th>
+                                                        <th>Invoice Number</th>
+                                                        <th>Referance Number</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {
+                                                        pendinginvoicelist.map((item, index) => (
+                                                            <tr key={index} className="vendor-Invoice-list cursor-pointer" data-dismiss="modal" value={`${item.sno},${item.invoice_no}`} onClick={(e) => {
                                                                 handleChangeInvoiceDetail({ sno: item.sno, invoice_no: item.invoice_no, InvoiceAmt: item.invoice_amt, Index: invoceindexno, refno: item.reference_no, invoice_date: item.date, invoice_url: item.uploadInvoice, vendor_name: item.vendor });
                                                                 savatoarry(invoceindexno)
-                                            }}>
-                                            <td>{item.account_no}</td>
-                                    <td>{item.invoice_no}</td>
-                                    <td>{item.reference_no}</td>
-                                    
-                                </tr>
+                                                            }}>
+                                                                <td>{item.account_no}</td>
+                                                                <td>{item.invoice_no}</td>
+                                                                <td>{item.reference_no}</td>
 
-                                    ))
-                                    }
-                              
-                            </tbody>
-                        </table>
+                                                            </tr>
+
+                                                        ))
+                                                    }
+
+                                                </tbody>
+                                            </table>
                                             {/* <ul>
                                                 {
                                                     pendinginvoicelist.map((item, index) => (

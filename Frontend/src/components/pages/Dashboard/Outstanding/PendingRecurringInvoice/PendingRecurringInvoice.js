@@ -22,7 +22,6 @@ const PendingRecurringInvoice = () => {
       setReceiveRecurring(get_recurring.pendingresult)
       const bill_freq = await ActiveBillingFreq(localStorage.getItem('Database'))
       setBillingFreqList(bill_freq)
-      console.log(bill_freq)
     }
     fetchdata()
   }, [])
@@ -108,9 +107,9 @@ const PendingRecurringInvoice = () => {
         </div>
 
         <div className='pending_recurring-cards bg-white rounded shadow1-silver justify-content-between px-3 py-3'>
-          <div className='pending-recurring-card mx-auto text-center rounded px-2 cursor-pointer pt-2'>
+          {/* <div className='pending-recurring-card mx-auto text-center rounded px-2 cursor-pointer pt-2'>
             <h6>Pending Recurring Invoice</h6>
-          </div>
+          </div> */}
           {
             billingFreqList.map((freqType, index) => 
               <div key={index} className={`pending-recurring-card mx-auto text-center rounded px-2 cursor-pointer pt-2 ${ filterType === freqType.billing_freq && 'pending-recurring-activecard'}`} onClick={() => filterInvoie(freqType.billing_freq)}>

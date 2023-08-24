@@ -1386,7 +1386,7 @@ export const InvoiceEmail = async (message) => {
 }
 
 export const VendorPaymentEmail = async (message) => {
-    const url = `https://drizzlebackend.awlworldwide.com/api/vendorpaymentemail`
+    const url = `http://localhost:2008/api/vendorpaymentemail`
     return axios.post(url, { message }).then(response => response.data).catch(error => console.log(error));
 }
 
