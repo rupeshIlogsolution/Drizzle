@@ -631,7 +631,7 @@ export const UpdateBillingFreqapi = async (org, sno, billing_freq, billing_freq_
 }
 
 export const ActiveBillingFreq = async (org) => {
-    const url = `http://localhost:2008/api/ActiveBillingFreq`
+    const url = `https://drizzlebackend.awlworldwide.com/api/ActiveBillingFreq`
     return axios.post(url, { org }).then(response => response.data).catch(error => console.log(error));
 }
 
@@ -1002,7 +1002,7 @@ export const GetVendorContract = async (org, sno) => {
 }
 
 export const ActiveVendorContract = async (org) => {
-    const url = `http://localhost:2008/api/ActiveVendorContract`
+    const url = `https://drizzlebackend.awlworldwide.com/api/ActiveVendorContract`
     return axios.post(url, { org }).then(response => response.data).catch(error => console.log(error));
 }
 
@@ -1276,7 +1276,7 @@ export const FilterInvoice = async (org, value, pageno, rowsperpage) => {
 }
 
 export const PendingRecurringInvoiceApi = async (org,billling_freq) => {
-    const url = `http://localhost:2008/api/recurringpendinginvoice`
+    const url = `https://drizzlebackend.awlworldwide.com/api/recurringpendinginvoice`
     return axios.post(url, { org,billling_freq }).then(response => response.data).catch(error => console.log(error));
 }
 export const Outstanding_Invoice_filter = async (org, type, value) => {
@@ -1386,7 +1386,7 @@ export const InvoiceEmail = async (message) => {
 }
 
 export const VendorPaymentEmail = async (message) => {
-    const url = `http://localhost:2008/api/vendorpaymentemail`
+    const url = `https://drizzlebackend.awlworldwide.com/api/vendorpaymentemail`
     return axios.post(url, { message }).then(response => response.data).catch(error => console.log(error));
 }
 
