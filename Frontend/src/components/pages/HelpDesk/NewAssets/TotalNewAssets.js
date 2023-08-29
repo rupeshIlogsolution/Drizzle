@@ -52,6 +52,12 @@ const columns = [
         sortable: true,
     },
     {
+        name: 'Manufacture',
+        selector: 'manufacture',
+        sortable: true,
+    },
+    
+    {
         name: 'Asset Assign',
         selector: 'asset_assign',
         sortable: true,
@@ -66,6 +72,7 @@ const columns = [
         selector: 'asset_status',
         sortable: true,
     },
+
     // {
     //     name: "Actions",
     //     sortable: false,

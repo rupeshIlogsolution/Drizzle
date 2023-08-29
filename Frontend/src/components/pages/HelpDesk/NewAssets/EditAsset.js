@@ -40,10 +40,8 @@ const EditAsset = () => {
 
             const getdata = await GetNewAssets(org, localStorage.getItem('newassetsno'))
             setData(getdata[0])
-            console.log(getdata)
 
             const detail = await EmployeesDetail(org, getdata[0].asset_assign_empid);
-            console.log(detail)
             setEmployeedetail(detail)
 
             const devices = await ActiveAssetesType(org);
@@ -109,7 +107,6 @@ const EditAsset = () => {
     const handleClickDeviceDetail = () => {
         if (devicedetail) {
             document.getElementById('devicedivdetail').style.display = 'none'
-
         }
         else {
             document.getElementById('devicedivdetail').style.display = 'block'
@@ -237,7 +234,8 @@ const EditAsset = () => {
             Location: location,
             Date_of_Entry: todatdate,
             Name: assetassign,
-            mailid: Asset_assign_email
+            mailid: Asset_assign_email,
+            status: assetstatus
         }
 
 
@@ -296,7 +294,6 @@ const EditAsset = () => {
                     errorcount = errorcount + 1;
                     return false;
                 }
-
             }
             else {
                 purchaseprice = '';

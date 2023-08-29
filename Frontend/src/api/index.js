@@ -1377,7 +1377,7 @@ export const Mail = async (message) => {
     return axios.post(url, { message }).then(response => response.data).catch(error => console.log(error));
 }
 export const AssetEmail = async (message) => {
-    const url = `https://drizzlebackend.awlworldwide.com/api/assetemail`
+    const url = `http://localhost:2008/api/assetemail`
     return axios.post(url, { message }).then(response => response.data).catch(error => console.log(error));
 }
 export const InvoiceEmail = async (message) => {
